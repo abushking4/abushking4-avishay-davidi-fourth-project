@@ -1,0 +1,29 @@
+/* .Menu {
+    display: flex;
+    justify-content: space-around;
+} */
+
+.Menu {
+	display: flex;
+    flex-direction: column;
+    margin: 15px;
+    height: auto;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.Menu > a {
+    margin: 7px;
+}
+
+.Menu > button {
+    margin: 7px;
+}
+
+.Menu > button:hover {
+    transform: scale(1.05);
+}

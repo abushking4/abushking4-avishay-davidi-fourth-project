@@ -1,0 +1,8 @@
+html, #root {
+    height: 100%;
+    margin: 0;
+}
+body {
+    background-color: unset;
+    background-color: #5f5a5a63 !important;
+}

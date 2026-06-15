@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "9377461e-d293-410a-b594-131bba5fb4f5",
+    "name": "Chat Gpt",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44253124",
+    "_collection_link": "https://go.postman.co/collection/44253124-9377461e-d293-410a-b594-131bba5fb4f5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get All Conversation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/conversations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "conversations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get One Conversation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/conversations/details/4e67fcde-675c-11f1-b12b-00155d0557c7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "conversations",
+            "details",
+            "4e67fcde-675c-11f1-b12b-00155d0557c7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Messages",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/messages/20",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "messages",
+            "20"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Conversation Messages",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/conversations/messages/4e67fcde-675c-11f1-b12b-00155d0557c7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "conversations",
+            "messages",
+            "4e67fcde-675c-11f1-b12b-00155d0557c7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send And Get New Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"conversation_id\": 25,\r\n    \"message_text\": \"איזה עוד תוספות אפשריות לצד השניצל?\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/messages",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "messages"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create New Conversation",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"title\": \"הכנת שניצלים\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/conversations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "api",
+            "conversations"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

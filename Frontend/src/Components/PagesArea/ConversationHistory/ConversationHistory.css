@@ -1,0 +1,15 @@
+.ConversationHistory {
+	display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
+
+.conversation-card {
+    margin: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    width: auto;
+    height: auto;
+}

@@ -1,0 +1,141 @@
+.About {
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.About .cards-container {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.About * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.About .container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.About .hero {
+    background: linear-gradient(135deg, #4583e0, #224ddb);
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.About .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    justify-content: start;
+}
+
+.About .hero p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+.About .card {
+    background: rgba(255, 245, 245, 0.664);
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    height: auto !important;
+    /* width: auto; */
+    flex: 1 1 calc(50% - 15px);
+}
+
+.About .card > *, li{
+    height: auto !important;
+    align-items: center;
+    /* text-align: center; */
+    justify-content: center;
+}
+.About .card h2 {
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.About .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.About .tech-item {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.About .features {
+    list-style: none;
+}
+
+.About .features li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.About .features li:last-child {
+    border-bottom: none;
+}
+
+.About .apikey-box {
+    background: #fff7ed;
+    border: 2px dashed #fb923c;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.About .apikey-box strong {
+    color: #c2410c;
+}
+
+.About .footer {
+    text-align: center;
+    color: #6b7280;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.About .placeholder {
+    background: white;
+    border: 1px dashed #999;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    color: #666;
+}
+
+
+.About .developer-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.About .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
