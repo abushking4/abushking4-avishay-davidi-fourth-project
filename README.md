@@ -177,25 +177,16 @@ DATABASE_URL=mysql+pymysql://user:password@localhost/Avishay-Gpt
 OPENAI_API_KEY=your_openai_api_key
 ```
 
-### Frontend (if needed)
-```
-VITE_API_BASE_URL=http://localhost:4000
-```
-
 ## 📦 Available Scripts
 
 ### Frontend
 ```bash
-npm run dev       # Start development server with HMR
-npm run build     # Build for production
-npm run preview   # Preview production build
-npm run lint      # Run ESLint
+npm start
 ```
 
 ### Backend
 ```bash
-python -m uvicorn app:server --reload --port 4000  # Run with auto-reload
-python -m uvicorn app:server --port 4000          # Run production
+py src/app.py
 ```
 
 ## 🎨 Features
