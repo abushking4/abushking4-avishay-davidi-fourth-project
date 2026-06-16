@@ -13,7 +13,6 @@ class GptService:
 
     def __init__(self) -> None:
         self.session = dal.create_session()
-        # print("Session opened")
 
     def create_new_conversation(self, conversation_schema: ConversationSchema):
         # Ensure title fits DB column: truncate to 40 (schema) and fallback if DB rejects
@@ -25,10 +24,9 @@ class GptService:
             self.session.add(conversation)
             self.session.commit()
         except DataError:
-            # DB column may be shorter than 40; retry with a shorter truncated title
             self.session.rollback()
             short_title = title[:20]
-            conversation.title = short_title  # type: ignore
+            conversation.title = short_title  
             self.session.add(conversation)
             self.session.commit()
         self.session.refresh(conversation)
@@ -124,7 +122,6 @@ class GptService:
         )
         result = self.session.execute(statement, {"conversation_uuid": conversation_uuid})
         db_conversation = result.mappings().all()
-        # db_conversation = self.session.get(ConversationModel, conversation_uuid)
         if not db_conversation: raise HTTPException(status.HTTP_404_NOT_FOUND, "Sorry):\nThis conversation not found")
         return db_conversation
 
@@ -140,7 +137,6 @@ class GptService:
         conversation = self.get_conversation_by_uuid(conversation_uuid)
         return conversation.conversation_title
 
-#   openai related functions
     def build_openai_messages(self, db_messages: list[MessageModel]) -> list[dict[str, str]]:
         openai_messages: list[dict[str, str]] = []
         for msg in db_messages:
@@ -155,14 +151,14 @@ class GptService:
         if AppConfig.chat_mock_mode: return AppConfig.mock_reply
 
         api_key = AppConfig.api_key.strip()
-        if not api_key: # or api_key == "JBHBIJB":
+        if not api_key:
             raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Chat API is not configured. Set a valid API_KEY or enable CHAT_MOCK_MODE.",)
 
         try:
             client = OpenAI(api_key=api_key)
             response = client.chat.completions.create(
                 model="gpt-4o-mini",
-                messages=messages,  # type: ignore[arg-type]
+                messages=messages,  
             )
             content = response.choices[0].message.content
             if not content: raise HTTPException(status.HTTP_502_BAD_GATEWAY, "Chat API returned an empty response.")
@@ -173,10 +169,8 @@ class GptService:
             raise HTTPException(status.HTTP_502_BAD_GATEWAY, "Chat API request failed. Please try again later.")
 
 
-#   close session
     def close(self):
         self.session.close()
-        # print("Session Closed")
 
     def __enter__(self):
         return self

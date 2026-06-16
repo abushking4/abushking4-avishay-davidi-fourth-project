@@ -77,7 +77,7 @@ export function About() {
                         <div className="contact-details">
                             <p><strong>שם:</strong>  אבישי דוידי</p>
                             <p><strong>טלפון:</strong>  <a href="tel:054-2169111">054-2169111</a></p>
-                            <p><strong>דוא"ל:</strong>  <a href="mailto:your.email@example.com">abushking4@gamil.com</a></p>
+                            <p><strong>דוא"ל:</strong>  <a href="mailto:abushking4@gmail.com">abushking4@gamil.com</a></p>
                         </div>
                         <img src={myPicture} alt="Profile Picture" className="profile-pic" />
                     </div>

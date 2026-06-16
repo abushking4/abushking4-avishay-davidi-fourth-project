@@ -10,7 +10,6 @@ class ConversationSchema(BaseSchema):
     conversation_uuid: Optional[str] = None
     title: str = Field(min_length=3, max_length=40)
     created_at: Optional[datetime] = None
-    # updated_at: Optional[datetime] = None
 
 
 
@@ -20,4 +19,3 @@ class ConversationModel(BaseModel):
     conversation_uuid = Column(String, nullable=False, server_default=text('uuid()'))
     title = Column(String, nullable=False)
     created_at = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'))
-    # updated_at = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'), server_onupdate=text('CURRENT_TIMESTAMP'))

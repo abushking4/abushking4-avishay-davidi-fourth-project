@@ -2,15 +2,11 @@ import { Grid } from "@mui/material";
 import { Header } from "../Header/Header";
 import { Menu } from "../Menu/Menu";
 import { Routing } from "../Routing/Routing";
-import "./Layout.css";
 
 export function Layout() {
 
     return (
         <Grid container sx={{ minHeight: "100vh" }} className="Layout">
-            {/* <Grid size={12} sx={{ height: {sm: "10vh"} }} border={"2px solid black"}>
-                <Header />
-            </Grid> */}
             <Grid size={12} border={"1px rgba(141, 135, 135, 0.8) solid"}>
                 <Header />
             </Grid>

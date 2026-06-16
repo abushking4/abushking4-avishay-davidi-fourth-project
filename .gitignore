@@ -1,15 +1,11 @@
-# =========================
 # Environment & secrets
-# =========================
 .env
 .env.*
 !.env.example
 *.pem
 *.key
 
-# =========================
 # Python (backend)
-# =========================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -48,9 +44,7 @@ venv/
 ENV/
 env/
 
-# =========================
 # Node.js / Frontend (Vite + React)
-# =========================
 node_modules/
 Frontend/dist/
 Frontend/dist-ssr/
@@ -61,18 +55,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# =========================
 # Build & cache
-# =========================
 *.tsbuildinfo
 .cache/
 .parcel-cache/
 .vite/
 .turbo/
 
-# =========================
 # IDE & editors
-# =========================
 .idea/
 *.iml
 .vscode/*
@@ -85,9 +75,7 @@ lerna-debug.log*
 .classpath
 .settings/
 
-# =========================
 # OS files
-# =========================
 .DS_Store
 .DS_Store?
 ._*
@@ -97,9 +85,7 @@ ehthumbs.db
 Thumbs.db
 Desktop.ini
 
-# =========================
 # Logs & temp files
-# =========================
 *.log
 logs/
 tmp/

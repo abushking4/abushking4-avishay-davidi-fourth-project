@@ -1,8 +1,3 @@
-/* .Menu {
-    display: flex;
-    justify-content: space-around;
-} */
-
 .Menu {
 	display: flex;
     flex-direction: column;

@@ -13,7 +13,6 @@ class MessageSchema(BaseSchema):
     sender_type: int = Field(gt=0, le=3) # 1 for chat, 2 for user
     message_text: str = Field(min_length=2, max_length=20000)
     created_at: Optional[datetime] = None
-    # updated_at: Optional[datetime] = None
 
 
 class UserMessageRequest(BaseSchema):
@@ -34,4 +33,3 @@ class MessageModel(BaseModel):
     sender_type = Column(Integer, nullable=False)
     message_text = Column(String, nullable=False)
     created_at = Column(DateTime, server_default=text('CURRENT_TIMESTAMP'))
-    # updated_at = Column(DateTime) #, default=datetime.utcnow)

@@ -1,10 +1,8 @@
 import { ConversationModel } from "./ConversationModel";
 
 export class UserMessageRequest {
-
     conversation_id?: number;
     message_text!: string;
-
 }
 
 export class SendMessageResponse {

@@ -52,14 +52,12 @@
     margin-bottom: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     height: auto !important;
-    /* width: auto; */
     flex: 1 1 calc(50% - 15px);
 }
 
 .About .card > *, li{
     height: auto !important;
     align-items: center;
-    /* text-align: center; */
     justify-content: center;
 }
 .About .card h2 {

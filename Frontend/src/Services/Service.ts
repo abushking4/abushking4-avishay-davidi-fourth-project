@@ -1,6 +1,5 @@
 import axios from "axios";
 import { appConfig } from "../Utils/AppConfig";
-// import { CategoryModel } from "../Models/MessageModel";
 import { ConversationModel, NewConversationRequest } from "../Models/ConversationModel";
 import { MessageModel, SendMessageResponse, UserMessageRequest } from "../Models/MessageModel";
 
@@ -31,15 +30,6 @@ class Service {
         const dbConversationData = await axios.post<ConversationModel>(appConfig.conversationsUrl, newConversation)
         return dbConversationData.data;
     }
-
-
-    // public async getAllCategories(): Promise<CategoryModel[]> {
-    //     const response = await axios.get<CategoryModel[]>(appConfig.categoriesUrl);
-    //     return response.data;
-    // }
-
-
-
 }
 
 export const service = new Service();
