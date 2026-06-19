@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TextField } from "@mui/material";
+import { Button, Card, CardContent, TextField } from "@mui/material";
 import "./NewConversation.css";
 import { UserMessageRequest } from "../../../Models/MessageModel";
 import { useForm } from "react-hook-form";
@@ -12,13 +12,14 @@ import { Loading } from "../../SharedArea/Loading/Loading";
 export function NewConversation() {
 
     useTitle("שיחה חדשה");
-    const { register, handleSubmit, formState: { errors } } = useForm<UserMessageRequest>();
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm<UserMessageRequest>();
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
 
     async function send(message: UserMessageRequest) {
         try {
             setIsLoading(true);
+            setValue("message_text", "");
             const response = await service.sendMessageAndGetResponse({ message_text: message.message_text });
             const conversationUuid = String(response.conversation.conversation_uuid);
             navigate("/conversations/" + conversationUuid);
@@ -34,11 +35,23 @@ export function NewConversation() {
 
 
             <div className="heading-container" >
-                {isLoading ? <Loading /> : (
-                    <div className="conversation-item">
-                        <h1>שלום איך אפשר לעזור לך היום?</h1>
-                    </div>
+                {!isLoading && (
+                    <Card className="chat-message" sx={{ borderRadius: 6, maxWidth: "60%" }}>
+                        <CardContent>
+                            <h1>שלום איך אפשר לעזור לך היום?</h1>
+                        </CardContent>
+                    </Card>
                 )}
+
+                {isLoading && (
+                    <Card className="chat-message" sx={{ borderRadius: 6, maxWidth: "60%" }}>
+                            <CardContent>
+                                <h2>רק רגע....</h2>
+                                <Loading />
+                            </CardContent>
+                        </Card>
+                )}
+
             </div>
 
             <div className="form-container">
@@ -53,8 +66,8 @@ export function NewConversation() {
                                 handleSubmit(send)();
                             }
                         }}
-                    /> 
-                    <button type="submit" className="send-button" disabled={isLoading}>שלח</button>
+                    />
+                    <Button disabled={isLoading} type="submit" variant="contained" color={isLoading ? "secondary" : "primary"} className="send-button">שלח</Button>
                 </form >
             </div>
         </div>
